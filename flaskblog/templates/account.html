@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block content %}
+      
+    <div class= "content-section ">
+        <div class="media">
+        <img class="rounded-circle account-img" src="{{ image_file}}">
+        <div class="media-body">
+            <h2 class="account-heading">{{ current_user.username }}</h2>
+            <p class="text-secondary">{{ current_user.email }}</p>
+        </div>
+        </div>
+        
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Profile Info</legend>
+                <div class="form-group">
+                    <div class= "container">
+                        <p class="p1"><b>Username: {{ current_user.username}}</b> <a class="l1" href="{{ url_for('users.updateprofile')}}">Update</a></p>
+                    </div>
+                    <div class= "container">
+                        <p class="p1"><b>Email:    {{ current_user.email }} </b><a class="l1" href="{{ url_for('users.updateprofile')}}">Update</a></p>
+                    </div>
+                    <div class= "container">
+                        <p class="p1"><b>Phone:    {{ current_user.phone }} </b><a class="l1" href="{{ url_for('users.updateprofile')}}">Update</a></p>
+                    </div> 
+                </div>
+            </fieldset>
+    </div>
+{% endblock content %}
